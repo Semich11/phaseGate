@@ -159,20 +159,10 @@ public class LagbajaSchoolGrade{
  		int counter = 0;
 
 
-         	int pass = 0;
-         	int fail = 0;
-
-
 		for (int score : highest){
 			 highestScoreStore[counter] = score;
  			 counter += 1;
 
-			 if (score >= 50){
-				pass += 1;
-			 }
-			 else{
-			 	fail += 1;
-			 }
 		}
 
 
@@ -188,22 +178,18 @@ public class LagbajaSchoolGrade{
 
 
  		for (int count = 0; count < subjectTotalScore.length; count++){
-
- 			int increment = 1;
-
+         		int pass = 0;
+         		int fail = 0;
  		
- 			for (int i = 0; i < increment; i++){
-				for (int j = 0; j < subjectsArray.length; j++){
-					if (subjectsArray[j][i] >= 50){
+ 			for (int i = 0; i < studentTotalScore.length; i++){
+					if (subjectsArray[i][count] >= 50){
 						pass += 1;
 					}
 					else{
 						fail += 1;
 					}
-				}
  			}
 
- 			increment += 1;
 
 
 	 		System.out.printf("%s%n%n\01Subject %d%n\02Highest scoring student is: %d %n\03Lowest scoring student is: %d %n\04Total score is: %d %nAverage score is: %.2f %nNumber of pases : %d %nNumber of fails: %d ", "SUBJECT SUMMARY", count + 1, highestScoreStore[count], lowestScoreStore[count], subjectTotalScore[count], subjectTotalScore[count] / (float) students, pass, fail);
