@@ -72,20 +72,9 @@ public class LagbajaSchoolGrade{
 
  		}
 
-
-
-/*
- 		System.out.println("subjectsArray: "+ Arrays.deepToString(subjectsArray));
- 		System.out.println("studentTotalScore: "+Arrays.toString(studentTotalScore));
- 		System.out.println("subjectTotalScore: "+Arrays.toString(subjectTotalScore));
-
-*/
  		
 
  		System.out.println(Arrays.toString(average));
-
-
-
 
 
 
@@ -134,26 +123,12 @@ public class LagbajaSchoolGrade{
 			singleSubjectScores[count] = subjectsArray[count][0];
  		}
 
- 		System.out.println("High!!: "+highestScoringStudent(subjectsArray));
-
-
- 		System.out.println("Students!!: "+gradePosition(singleSubjectScores , highestScoringStudent(subjectsArray)));
- 		System.out.println("Students!!: "+ subjectsArray[1][0]);
-
-
-
- 		System.out.println("THE HIGHEST NUBER"+Arrays.toString(singleHighestScoringStudent(subjectsArray, students)));
-
-
-
 
 
 
  		int[] highest = singleHighestScoringStudent(subjectsArray, students);
- 		System.out.print(highest);
 
  		int[] lowest = singleLowestScoringStudent(subjectsArray, students);
- 		System.out.println("Lowest!!: "+lowest+ "Dada");
 
  		int[] highestScoreStore = new int[highest.length];
  		int counter = 0;
@@ -189,26 +164,25 @@ public class LagbajaSchoolGrade{
 						fail += 1;
 					}
  			}
+			int studentWithHigherSubjectScore = 0;
+ 			for (int i = 0; i < students; i++){
+				if (highestScoreStore[count] == subjectsArray[i][count]){
+		 			studentWithHigherSubjectScore = i + 1;
+ 				}
+ 			}
 
+ 			int studentWithLowerSubjectScore = 0;
+ 			for (int i = 0; i < students; i++){
+				if (lowestScoreStore[count] == subjectsArray[i][count]){
+		 			studentWithLowerSubjectScore = i + 1;
+ 				}
+ 			}
 
+ 			System.out.println("SUBJECT SUMMARY\n\n");
 
-	 		System.out.printf("%s%n%n\01Subject %d%n\02Highest scoring student is: %d %n\03Lowest scoring student is: %d %n\04Total score is: %d %nAverage score is: %.2f %nNumber of pases : %d %nNumber of fails: %d ", "SUBJECT SUMMARY", count + 1, highestScoreStore[count], lowestScoreStore[count], subjectTotalScore[count], subjectTotalScore[count] / (float) students, pass, fail);
+	 		System.out.printf("Subject %d%n\02Highest scoring student is: Student %d %d %n\03Lowest scoring student is: Student %d %d %n\04Total score is: %d %nAverage score is: %.2f %nNumber of pases : %d 				%nNumber of fails: %d ", count + 1, studentWithHigherSubjectScore, highestScoreStore[count], studentWithLowerSubjectScore, lowestScoreStore[count], subjectTotalScore[count], 		 				subjectTotalScore[count] / (float) students, pass, fail);
 
  		}
-
-
-
-
-	 	//System.out.printf("%s%n%n\01%s%n\02Highest scoring student is: %n\03Lowest scoring student is: %n\04Total score is: %d %nAverage score is:  %nNumber of pases: %nNumber of fails: ", "SUBJECT SUMMARY", "Subject 1", subjectTotalScore[1] );
-
-
-
-
-
-
-
-
-
 
 
 
@@ -225,26 +199,6 @@ public class LagbajaSchoolGrade{
  		}
  		return positionGrade;
 	}
-
-
-
-
-
-	public static int highestScoringStudent(int[][] subjectsArray){
-	 	int highestStudent = 0;
-
- 		for (int i = 0; i < subjectsArray.length; i++){
-			for (int j = 0; j < subjectsArray.length; j++){
-
-				if (subjectsArray[i][0] >= subjectsArray[j][0]){
-					highestStudent = subjectsArray[i][0];
-  				}
-
-			}
-
- 		}
- 		return highestStudent;
- 	}
 
 
 
