@@ -3,14 +3,14 @@ import java.util.Scanner;
 
 
 
-public class LagbajaSchoolGrade{
+public class StudentGrade{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 
 
 
 
-		System.out.println("LagbajaSchoolGrade");
+		System.out.println("StudentGrade");
 
  		int pos = 0;
 
@@ -41,21 +41,16 @@ public class LagbajaSchoolGrade{
 
  		for (int count = 0; count < students; count++){
 			for (int innerCount = 0; innerCount < subjects; innerCount++){
+
 				System.out.printf("Entering score for student %d%n", count + 1);
+
 				System.out.printf("Enter score for subject %d%n", innerCount + 1);
 
 				subjectsArray[count][innerCount] = input.nextInt();
 
 				studentTotalScore[count] += subjectsArray[count][innerCount];
  				
-	 			System.out.println("Arse :"+subjectsArray[count][0]);
-
  			 	subjectTotalScore[innerCount] += subjectsArray[count][innerCount];
-
-
-
-
-
 
  			}
 
@@ -78,8 +73,9 @@ public class LagbajaSchoolGrade{
 
 
 
-		String equalSign = "=============================================================================================================";
-		System.out.printf("%s%n", equalSign);
+		String equalSign = "=";
+		String equalSignRepeat = equalSign.repeat(130);
+		System.out.printf("%s%n", equalSignRepeat);
 
 		System.out.printf("STUDENT ");
 
@@ -89,7 +85,7 @@ public class LagbajaSchoolGrade{
 		}
 		System.out.printf(" %10s %10s %10s%n", "TOT", "AVE", "POS");
 		
-		System.out.printf("%s%n", equalSign);
+		System.out.printf("%s%n", equalSignRepeat);
 
 		for (int count = 0; count < students; count++){ 
 			System.out.printf("Student %d", count + 1);
@@ -110,7 +106,7 @@ public class LagbajaSchoolGrade{
 			System.out.println();
  	  				
 		}
-		System.out.printf("%s%n%s%n", equalSign, equalSign);
+		System.out.printf("%s%n%s%n", equalSignRepeat, equalSignRepeat);
 
 
 
@@ -180,13 +176,17 @@ public class LagbajaSchoolGrade{
 
  			System.out.println("SUBJECT SUMMARY\n\n");
 
-	 		System.out.printf("Subject %d%n\02Highest scoring student is: Student %d %d %n\03Lowest scoring student is: Student %d %d %n\04Total score is: %d %nAverage score is: %.2f %nNumber of pases : %d 				%nNumber of fails: %d ", count + 1, studentWithHigherSubjectScore, highestScoreStore[count], studentWithLowerSubjectScore, lowestScoreStore[count], subjectTotalScore[count], 		 				subjectTotalScore[count] / (float) students, pass, fail);
+	 		System.out.printf("Subject %d%n\02Highest scoring student is: Student %d %d %n\03Lowest scoring student is: Student %d %d %n\04Total score is: %d %nAverage score is: %.2f %nNumber of pases : %d %nNumber of fails: %d ", count + 1, studentWithHigherSubjectScore, highestScoreStore[count], studentWithLowerSubjectScore, lowestScoreStore[count], subjectTotalScore[count],subjectTotalScore[count] / (float) students, pass, fail);
 
- 		}
+ 			}
 
 
 
-	}
+
+		}
+
+
+
 
 
 	public static int gradePosition(int[] position, int target){
@@ -244,12 +244,12 @@ public class LagbajaSchoolGrade{
 
 
 	public static int[] toDescending(int[] position){
- 		for (int i = 0; i < position.length; i++){
-			for (int j = 0; j < position.length; j++){
-				if (position[i] > position[j]){
-					int temp  = position[i];
- 					position[i] = position[j];
- 					position[j] = temp;
+ 		for (int higher = 0; higher < position.length; higher++){
+			for (int lower = 0; lower < position.length; lower++){
+				if (position[higher] > position[lower]){
+					int temp  = position[higher];
+ 					position[higher] = position[lower];
+ 					position[lower] = temp;
 				} 
 			}
  		}
