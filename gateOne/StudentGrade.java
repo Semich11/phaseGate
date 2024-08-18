@@ -46,7 +46,18 @@ public class StudentGrade{
 
 				System.out.printf("Enter score for subject %d%n", innerCount + 1);
 
-				subjectsArray[count][innerCount] = input.nextInt();
+				int userInput = input.nextInt();
+
+
+				while (userInput < 0 || userInput > 100){
+
+					System.out.printf("Enter score for subject %d again %n", innerCount + 1);
+
+					userInput = input.nextInt();
+
+				}
+
+				subjectsArray[count][innerCount] = userInput;
 
 				studentTotalScore[count] += subjectsArray[count][innerCount];
  				

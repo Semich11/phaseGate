@@ -24,9 +24,21 @@ public class MBTI{
 				};
 
 	for(int questionNumber = 0; questionNumber < 5; questionNumber++){
-		System.out.println("Question" + questionNumber + ":" + " " + questionEI[questionNumber]);
+		System.out.println("Question" + (questionNumber + 1)+ ":" + " " + questionEI[questionNumber]);
 		System.out.println("Select A or B");
 		char option = input.next().toUpperCase().charAt(0);
+
+		while (option != 'A' && option != 'B'){ 
+
+			System.out.printf("%nInvalid input! %n");
+
+			System.out.println("Question" + (questionNumber + 1)+ ":" + " " + questionEI[questionNumber]);
+
+			System.out.println("Select A or B");
+
+			option = input.next().toUpperCase().charAt(0);
+
+		}
 		
 		switch (option){
 			case 'A':
@@ -36,10 +48,14 @@ public class MBTI{
 			default:
 				System.out.println("Invalid");
 		}
-			System.out.println();
 	}
 
-		System.out.println();
+	System.out.println();
+
+
+
+
+
 
 		int secondCountA = 0;
 		int secondCountB = 0;
@@ -53,9 +69,21 @@ public class MBTI{
 				};
 
 	for(int questionNumber = 0; questionNumber < 5; questionNumber++){
-		System.out.println("Question" + questionNumber + ":" + " " + (questionSN[questionNumber]));
+		System.out.println("Question" + (questionNumber + 1) + ":" + " " + (questionSN[questionNumber]));
 		System.out.println("Select A or B");
 		char option = input.next().toUpperCase().charAt(0);
+
+		while (option != 'A' && option != 'B'){ 
+
+			System.out.printf("%nInvalid input! %n");
+
+			System.out.println("Question" + (questionNumber + 1) + ":" + " " + (questionSN[questionNumber]));
+
+			System.out.println("Select A or B");
+
+			option = input.next().toUpperCase().charAt(0);
+
+		}
 		
 		switch (option){
 			case 'A':
@@ -65,11 +93,15 @@ public class MBTI{
 			default:
 				System.out.println("Invalid");
 		}
-			System.out.println();
 	}
 
 
 	System.out.println();
+
+
+
+
+
 
 		int thirdCountA = 0;
 		int thirdCountB = 0;
@@ -86,6 +118,19 @@ public class MBTI{
 		System.out.println("Question" + questionNumber + ":" + " " + (questionTF[questionNumber]));
 		System.out.println("Select A or B");
 		char option = input.next().toUpperCase().charAt(0);
+
+
+		while (option != 'A' && option != 'B'){ 
+
+			System.out.printf("%nInvalid input! %n");
+
+			System.out.println("Question" + questionNumber + ":" + " " + (questionTF[questionNumber]));
+
+			System.out.println("Select A or B");
+
+			option = input.next().toUpperCase().charAt(0);
+
+		}
 		
 		switch (option){
 			case 'A':
@@ -95,11 +140,14 @@ public class MBTI{
 			default:
 				System.out.println("Invalid");
 		}
-			System.out.println();
 	}
 
 	
 	System.out.println();
+
+
+
+
 
 		int fourthCountA = 0;
 		int fourthCountB = 0;
@@ -116,6 +164,18 @@ public class MBTI{
 		System.out.println("Question" + questionNumber + ":" + " " + (questionJP[questionNumber]));
 		System.out.println("Select A or B");
 		char option = input.next().toUpperCase().charAt(0);
+
+		while (option != 'A' && option != 'B'){ 
+
+			System.out.printf("%nInvalid input! %n");
+		
+			System.out.println("Question" + questionNumber + ":" + " " + (questionJP[questionNumber]));
+
+			System.out.println("Select A or B");
+
+			option = input.next().toUpperCase().charAt(0);
+
+		}
 		
 		switch (option){
 			case 'A':
@@ -125,9 +185,12 @@ public class MBTI{
 			default:
 				System.out.println("Invalid");
 		}
-			System.out.println();
 	}
-		
+
+	System.out.println();
+
+
+
 
 	if (firstCountA > firstCountB && secondCountA > secondCountB && thirdCountB > thirdCountA && fourthCountB > fourthCountA){
 		System.out.println("ESFP");

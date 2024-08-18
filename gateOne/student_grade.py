@@ -30,7 +30,19 @@ for count in range(students):
 
 		print(f"Entering score for student {count + 1}");
 
-		subjects_array[count][inner_count] = int(input(f"Enter score for subject {inner_count + 1}: "))
+		userInput = int(input(f"Enter score for subject {inner_count + 1}: "))
+
+		while userInput < 0 or userInput > 100:
+
+			print(f"Enter score for subject {inner_count + 1} again: ", end='') 
+
+			userInput = int(input())
+
+
+
+		subjects_array[count][inner_count] = userInput
+		#subjects_array[count][inner_count] = int(input(f"Enter score for subject {inner_count + 1}: "))
+
 
 		student_total_score[count] += subjects_array[count][inner_count];
  				
